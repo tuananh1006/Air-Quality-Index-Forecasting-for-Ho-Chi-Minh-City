@@ -5,7 +5,7 @@
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ## 📖 Introduction
-This repository contains the source code and dataset for the research project **"Air Quality Index Forecasting for Ho Chi Minh City"**. [cite_start]The project addresses the critical need for real-time air quality monitoring in one of Southeast Asia's most densely populated cities[cite: 19, 30].
+This repository contains the source code and dataset for the research project **"Air Quality Index Forecasting for Ho Chi Minh City"**.The project addresses the critical need for real-time air quality monitoring in one of Southeast Asia's most densely populated cities.
 
 The objective is to develop high-accuracy **hourly AQI forecasting models** using advanced Deep Learning architectures (including Hybrid and Decomposition-based models) to support early warning systems for urban pollution.
 
