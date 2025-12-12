@@ -7,32 +7,32 @@
 ## 📖 Introduction
 This repository contains the source code and dataset for the research project **"Air Quality Index Forecasting for Ho Chi Minh City"**. [cite_start]The project addresses the critical need for real-time air quality monitoring in one of Southeast Asia's most densely populated cities[cite: 19, 30].
 
-[cite_start]The objective is to develop high-accuracy **hourly AQI forecasting models** using advanced Deep Learning architectures (including Hybrid and Decomposition-based models) to support early warning systems for urban pollution[cite: 20].
+The objective is to develop high-accuracy **hourly AQI forecasting models** using advanced Deep Learning architectures (including Hybrid and Decomposition-based models) to support early warning systems for urban pollution.
 
 ## 📊 Dataset Overview
-[cite_start]We constructed a massive-scale dataset specifically for this study, offering significantly higher resolution than prior works[cite: 35].
+We constructed a massive-scale dataset specifically for this study, offering significantly higher resolution than prior works.
 
-* [cite_start]**Data Source:** Weatherbit API & OpenStreetMap[cite: 55].
-* [cite_start]**Time Period:** January 2023 – September 2025[cite: 57].
-* [cite_start]**Temporal Resolution:** Hourly[cite: 57].
-* [cite_start]**Scale:** **941,433 records** across **40 monitoring stations**[cite: 35].
+* **Data Source:** Weatherbit API & OpenStreetMap.
+* **Time Period:** January 2023 – September 2025.
+* **Temporal Resolution:** Hourly.
+* **Scale:** **941,433 records** across **40 monitoring stations**.
 * **Features:**
-    * [cite_start]*Pollutants:* AQI, CO, NO2, O3, SO2, PM10, PM2.5[cite: 43].
-    * [cite_start]*Meteorological:* Temperature, Humidity, Pressure, Wind Speed, Clouds, Precipitation, UV Index[cite: 43].
+    * *Pollutants:* AQI, CO, NO2, O3, SO2, PM10, PM2.5.
+    * *Meteorological:* Temperature, Humidity, Pressure, Wind Speed, Clouds, Precipitation, UV Index.
 
 ## 🛠 Methodology
 
 ### 1. Data Pipeline
-[cite_start]The data acquisition and preparation process follows a rigorous automated pipeline[cite: 46]:
-1.  [cite_start]**Crawling & Geocoding:** Scraped administrative units from *thuvienphapluat.vn* and mapped them to geographic coordinates using the OpenStreetMap API[cite: 48, 51].
-2.  [cite_start]**Retrieval:** Extracted historical weather and air quality data via Weatherbit API[cite: 55].
+The data acquisition and preparation process follows a rigorous automated pipeline:
+1.  **Crawling & Geocoding:** Scraped administrative units from *thuvienphapluat.vn* and mapped them to geographic coordinates using the OpenStreetMap API.
+2.  **Retrieval:** Extracted historical weather and air quality data via Weatherbit API.
 3.  **Preprocessing:**
-    * [cite_start]**Outlier Detection:** Applied **Isolation Forest** to robustly handle anomalies[cite: 22].
-    * [cite_start]**Imputation:** Used cubic spline interpolation for missing values[cite: 90].
-    * [cite_start]**Normalization:** Scaled features to ensure model stability[cite: 22].
+    * **Outlier Detection:** Applied **Isolation Forest** to robustly handle anomalies.
+    * **Imputation:** Used cubic spline interpolation for missing values.
+    * **Normalization:** Scaled features to ensure model stability.
 
 ### 2. Models Implemented
-[cite_start]We implemented and compared **9 distinct architectures** to evaluate their capability in capturing nonlinear and spatiotemporal dependencies [cite: 37, 94-103]:
+We implemented and compared **9 distinct architectures** to evaluate their capability in capturing nonlinear and spatiotemporal dependencies:
 
 * **Sequential Baselines:** GRU, LSTM, BiLSTM.
 * **Hybrid Deep Learning:** **BiLSTM-CNN** (Combines temporal learning with feature extraction).
@@ -42,7 +42,7 @@ This repository contains the source code and dataset for the research project **
 
 ## 📈 Experimental Results
 
-The models were evaluated using 7 standard regression metrics. [cite_start]Below is the detailed performance comparison[cite: 118]:
+The models were evaluated using 7 standard regression metrics. Below is the detailed performance comparison:
 
 | Model | MAE | MSE | RMSE | MSLE | RMSLE | MAPE | $R^2$ |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -59,7 +59,7 @@ The models were evaluated using 7 standard regression metrics. [cite_start]Below
 *(Bold indicates the best performance in that metric category)*
 
 ### 🔍 Key Findings
-[cite_start]Based on the experimental analysis, we observed the following interesting patterns[cite: 115, 116, 117]:
+Based on the experimental analysis, we observed the following interesting patterns:
 
 1.  **BiLSTM-CNN Dominance:** This hybrid model outperformed other methods by ranking **1st in 6/7 metrics** (except R-squared).
 2.  **Effectiveness of CNN:** Using CNN layers to reduce parameters from the LSTM architecture appears to be the key factor for the success of BiLSTM-CNN compared to the standard BiLSTM.
